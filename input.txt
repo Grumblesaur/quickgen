@@ -1,0 +1,12 @@
+//plosives
+p t k
+//nasals
+m n
+//vowels
+a e i o u
+//end of line
+#
+
+V
+CV
+CVC
