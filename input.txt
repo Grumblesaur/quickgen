@@ -1,12 +1,15 @@
-//plosives
+//plosives :: 0
 p t k
-//nasals
+//nasals :: 1
 m n
-//vowels
+//vowels :: 2
 a e i o u
 //end of line
 #
-
+//Onsets :: 0
+N P
+//Nuclei :: 1
 V
-CV
-CVC
+//Codas :: 2
+N
+#

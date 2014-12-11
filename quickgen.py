@@ -7,6 +7,8 @@ fout = open('output.txt', 'w')
 random.seed(None)
 
 phonemes = []
+rules = []
+syllables = ['ONC', 'ON', 'NC', 'N']
 
 with open('input.txt') as fin:
 
@@ -16,9 +18,11 @@ with open('input.txt') as fin:
 			break
 		elif list[0][0] != '/':
 			phonemes.append(list)
+	
+	for line in fin:
+		line = line.split()
+		if list[0][0] == '#':
+			break
+		elif list[0][0] != '/':
+			rules.append(list)
 
-print "%s \n" % phonemes[0]
-print "%s \n" % phonemes[1]
-print "%s \n" % phonemes[2]
-
-print phonemes[2][4]
