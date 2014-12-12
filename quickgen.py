@@ -2,6 +2,10 @@
 # -*- coding: utf-8 -*-
 import os, sys, random
 
+#supply input as raw_input if running Python 3 or higher
+if sys.version_info >= (3,0):
+	raw_input = input
+
 def segment(n, shape, phonemes):
 	#grab a phoneme from the right category and return it
 	pattern = shape[n]
