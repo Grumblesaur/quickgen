@@ -94,7 +94,7 @@ while i > 0:
 	#working word variable
 	word = ""
 	#create word in this loop
-	for j in range(0, int(random.triangular(0,6,1.8)) + 1):
+	for j in range(0, int(random.triangular(0,5,1.45)) + 1):
 		#working syllable variable
 		syll = ""
 		#choose a random syllable pattern to follow
