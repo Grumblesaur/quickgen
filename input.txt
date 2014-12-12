@@ -1,15 +1,30 @@
 //plosives :: 0
-p t ʔ h
-//nasals :: 1
-m n l w
-//vowels :: 2
-a e i o u
-//end of line
+p t k b d g t t t
+//fricatives :: 1
+f v s z þ ð s s s
+//nasals :: 2
+m n ñ m n
+//sonorants :: 3
+l w r j l l r
+//glottals :: 4
+h ʔ h h
+#
+//front vowels :: 0
+a e i
+//back vowels :: 1
+o u
+//front long vowels :: 2
+á é í a e i
+//front back vowels :: 3
+ó ú o u
 #
 //Onsets :: 0
-N P
+0 1 2 3 4 03 13
 //Nuclei :: 1
-V
+0 1
 //Codas :: 2
-//N
+2 4
+#
+//syllable patterns
+ON N ONC NC
 #
