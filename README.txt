@@ -21,7 +21,7 @@ quickgen.py is a lightweight Python-based random word generator in progress.
 INSTRUCTIONS FOR USE
 ====================
 
-You will need Python 2 to run this program.
+This program is compatible with Python 2 and Python 3.
 
 You should create an input file with your phonemes and rules.
 Use "//" or "/" to comment out a line in the input file.
