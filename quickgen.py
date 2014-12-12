@@ -45,6 +45,8 @@ fout = open(out, 'w')
 with open(inn) as fin:
 	#get consonants
 	for line in fin:
+		if line.strip() == "":
+			continue
 		list = line.split()
 		if list[0][0] == '#':
 			break
@@ -52,6 +54,8 @@ with open(inn) as fin:
 			consonants.append(list)
 	#get vowels
 	for line in fin:
+		if line.strip() == "":
+			continue
 		list = line.split()
 		if list[0][0] == '#':
 			break
@@ -59,6 +63,8 @@ with open(inn) as fin:
 			vowels.append(list)
 	#get types
 	for line in fin:
+		if line.strip() == "":
+			continue
 		list = line.split()
 		if list[0][0] == '#':
 			break
@@ -66,6 +72,8 @@ with open(inn) as fin:
 			types.append(list)
 	#get syllables
 	for line in fin:
+		if line.strip() == "":
+			continue
 		list = line.split()
 		if list[0][0] == '#':
 			break
