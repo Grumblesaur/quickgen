@@ -9,6 +9,10 @@ You should create an input file with your phonemes and rules.
 Use "//" or "/" to comment out a line in the input file.
 This will prevent the program from extracting that line.
 
+When prompted for input at runtime, the default values (the
+values passed when you press Enter/Return without typing
+anything) are "input.txt", "output.txt", and "100".
+
 I recommend naming your phoneme categories with comments as
 in this example:
 
