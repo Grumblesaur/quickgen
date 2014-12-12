@@ -8,6 +8,9 @@ You will need Python 2 to run this program.
 You should create an input file with your phonemes and rules.
 Use "//" or "/" to comment out a line in the input file.
 This will prevent the program from extracting that line.
+The # sign on its own line delimits a block of phoneme
+definitions and should be between each section or else
+the program will fail.
 
 When prompted for input at runtime, the default values (the
 values passed when you press Enter/Return without typing
@@ -111,7 +114,7 @@ with codas, put at least one number in the //codas :: 2
 category, but remove any of the syllable structures with
 "C" in them from the syllable structures list.
 
-Likewise if you have a similar case with onsets.
+Likewise with "O" if you have a similar case with onsets.
 
 If your language has syllabic nasals or sonorants, create
 a group for them in vowels. You can still have a group
