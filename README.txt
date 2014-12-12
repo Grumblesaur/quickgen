@@ -27,8 +27,10 @@ You should create an input file with your phonemes and rules.
 Use "//" or "/" to comment out a line in the input file.
 This will prevent the program from extracting that line.
 The # sign on its own line delimits a block of phoneme
-definitions and should be between each section or else
-the program will fail.
+or structure definitions and should be between each section
+or else the program will fail. Blank lines are ignored by
+the program, so feel free to space your categories and groups
+as you please.
 
 When prompted for input at runtime, the default values (the
 values passed when you press Enter/Return without typing
