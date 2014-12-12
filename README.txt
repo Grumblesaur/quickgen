@@ -38,30 +38,38 @@ I recommend naming your phoneme categories with comments as
 in this example:
 
 //CONSONANTS
-
 //plosives :: 0
 p t k b d g
+
 //fricatives :: 1
 f v s z s s
+
 //nasals :: 2
 m n
+
 //sonorants :: 3
 l r
 #
+
 //VOWELS
 //front vowels :: 0
 a e i
+
 //back vowels :: 1
 o u
 #
+
 //PARTS OF SYLLABLES
 //onsets :: 0
 0 1 2 03 13
+
 //nuclei :: 1
 0 1
+
 //codas :: 2
 2 3
 #
+
 //SYLLABLES
 //syllable patterns
 N ON NC ONC
