@@ -1,7 +1,7 @@
 //plosives :: 0
-p t k
+p t ʔ h
 //nasals :: 1
-m n
+m n l w
 //vowels :: 2
 a e i o u
 //end of line
@@ -11,5 +11,5 @@ N P
 //Nuclei :: 1
 V
 //Codas :: 2
-N
+//N
 #
