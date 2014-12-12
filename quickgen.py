@@ -20,12 +20,12 @@ def segment(n, shape, phonemes):
 #end segment function def
 
 #ask for name of input file (default = "input.txt")
-inn = raw_input("What is the name of your input file? ")
+inn = raw_input("What is the name of your input file? (Leave blank for 'input.txt') ")
 if inn == "":
 	inn = "input.txt"
 
 #ask for name of output file (default = "output.txt")
-out = raw_input("What is the name of your output file? ")
+out = raw_input("What is the name of your output file? (Leave blank for 'output.txt') ")
 if out == "":
 	out = "output.txt"
 
@@ -84,7 +84,7 @@ with open(inn) as fin:
 syllables = syllables[0]
 
 #ask for number of words (default = 100)
-i = raw_input("How many words would you like to build? ")
+i = raw_input("How many words would you like to build? (Leave blank for 100) ")
 if i == "":
 	i = 100
 else:
