@@ -3,58 +3,64 @@
 import os, sys, random
 
 def segment(n, shape, phonemes):
-	#print phonemes
+	#grab a phoneme from the right category and return it
 	pattern = shape[n]
 	seg = ""
 	onset = int(random.random() * 100) % len(shape[n])
 	for i in range(0, len(shape[n][onset])):
 		a = int(shape[n][onset][i])
 		b = int(random.random() * 100) % len(phonemes[a])
-		#print "index a = %s, index b = %s" % (a, b)
 		seg += phonemes[a][b]
 	
 	return seg
+#end segment function def
 
+#ask for name of input file (default = "input.txt")
 inn = raw_input("What is the name of your input file? ")
 if inn == "":
 	inn = "input.txt"
 
+#ask for name of output file (default = "output.txt")
 out = raw_input("What is the name of your output file? ")
 if out == "":
 	out = "output.txt"
 
+#use system time for seed
 random.seed(None)
 
+#prepare lists
 consonants = []
 vowels = []
-
 types = []
 syllables = []
 
+#prepare the output file
 fout = open(out, 'w')
-with open(inn) as fin:
 
+#extract from input file
+with open(inn) as fin:
+	#get consonants
 	for line in fin:
 		list = line.split()
 		if list[0][0] == '#':
 			break
 		elif list[0][0] != '/':
 			consonants.append(list)
-	
+	#get vowels
 	for line in fin:
 		list = line.split()
 		if list[0][0] == '#':
 			break
 		elif list[0][0] != '/':
 			vowels.append(list)
-	
+	#get types
 	for line in fin:
 		list = line.split()
 		if list[0][0] == '#':
 			break
 		elif list[0][0] != '/':
 			types.append(list)
-	
+	#get syllables
 	for line in fin:
 		list = line.split()
 		if list[0][0] == '#':
@@ -62,25 +68,11 @@ with open(inn) as fin:
 		elif list[0][0] != '/':
 			syllables.append(list)
 
+#un-nest the syllable patterns
 syllables = syllables[0]
 
-#print "The first class of consonants contains: %s" % consonants[0]
-#print "The second class of consonants contains: %s" % consonants[1]
-#print "The third class of consonants contains: %s" % consonants[2]
-#print "The fourth class of consonants contains: %s" % consonants[3]
-#print "The fifth class of consonants contains: %s" % consonants[4]
-
-#print "The first class of vowels contains: %s" % vowels[0]
-#print "The second class of vowels contains: %s" % vowels[1]
-
-print "Possible onsets are: %s" % types[0]
-print "Possible nuclei are: %s" % types[1]
-print "Possible codas are: %s" % types[2]
-
-print "Syllable patterns are: %s" % syllables
-
+#ask for number of words (default = 100)
 i = raw_input("How many words would you like to build? ")
-
 if i == "":
 	i = 100
 else:
@@ -90,7 +82,7 @@ while i > 0:
 	#working word variable
 	word = ""
 	#create word in this loop
-	for j in range(0, int(random.random() * 100) % 5 + 1):
+	for j in range(0, int(random.triangular(0,6,1.8)) + 1):
 		#working syllable variable
 		syll = ""
 		#choose a random syllable pattern to follow
@@ -105,8 +97,11 @@ while i > 0:
 			elif form[k] == "N":
 				#retrieve a string that is a valid nucleus
 				syll += segment(1, types, vowels)
-				
+		#add new syllable to the word		
 		word += syll
+	#print out the word followed by a newline
 	fout.write(word)
 	fout.write('\n')
+	#decrement loop iterator
 	i -= 1
+#end while, end program
