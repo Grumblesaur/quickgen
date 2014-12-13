@@ -116,4 +116,11 @@ while i > 0:
 	fout.write('\n')
 	#decrement loop iterator
 	i -= 1
-#end while, end program
+#end while
+#close files
+fin.close()
+fout.close()
+
+sys.stdout.write("Program finished. \n")
+
+#end program
