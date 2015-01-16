@@ -29,22 +29,6 @@ def parse(structure, part, phonemes):
 	
 	return seg #return the segment to the main script
 #end parse function definition
-	
-	
-'''
-def segment(n, shape, phonemes):
-	#grab a phoneme from the right category and return it
-	pattern = shape[n]
-	seg = ""
-	onset = int(random.random() * 100) % len(shape[n])
-	for i in range(0, len(shape[n][onset])):
-		a = int(shape[n][onset][i])
-		b = int(random.random() * 100) % len(phonemes[a])
-		seg += phonemes[a][b]
-	
-	return seg
-#end segment function def
-'''
 
 #ask for name of input file (default = "input.txt")
 inn = raw_input("What is the name of your input file? (Leave blank for 'input.txt') ")

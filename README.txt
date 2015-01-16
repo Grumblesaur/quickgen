@@ -63,7 +63,7 @@ o u
 
 //PARTS OF SYLLABLES
 //onsets :: 0
-0 1 2 03 13
+0 1 2 0,3 1,3
 
 //nuclei :: 1
 0 1
