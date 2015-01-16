@@ -87,16 +87,18 @@ and you should number the groups in order (starting from
 zero), since you'll need to know those numbers for the
 PARTS OF SYLLABLES section.
 
-Note that CONSONANTS can have 10 categories, labeled 0-9,
-and that VOWELS can have 10 categories, labeled 0-9.
+Note that CONSONANTS can have any number of categories,
+with the first category being treated as "0" instead of "1",
+and that VOWELS can have any number of categories, with the
+first category being treated as "0" instead of "1".
 
 When you're defining parts of syllables, onsets and codas
 take note of the group numbers of consonants, while
 nuclei take note of the group numbers of vowels.
 
-Defining an onset rule "03" here takes a plosive (group 0)
+Defining an onset rule "0,3" here takes a plosive (group 0)
 and a sonorant (group 3) and puts them in a sequence.
-Defining an onset rule "13" here takes a fricative
+Defining an onset rule "1,3" here takes a fricative
 (group 1) and a sonorant (group 3) and puts them in
 a sequence.
 
@@ -123,7 +125,7 @@ This means that nasals will appear twice as often as
 sonorants in codas.
 
 //onsets :: 0
-0 1 2 3 03 13 13 0 0 2
+0 1 2 3 0,3 1,3 1,3 0 0 2
 
 This means that fricative-sonorant onsets and plosive-only
 onsets are more likely to appear than others.

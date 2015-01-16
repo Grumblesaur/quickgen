@@ -1,52 +1,58 @@
 //CONSONANTS
 //nasals :: 0
-m n ñ m n
+m m m n n n ŋ
 
 //voiceless plosives :: 1
-p t c p t
+p p p t t t k
 
 //voiced plosives :: 2
-b d g b d
+b b b d d g g
 
-//voiceless sibilants :: 3
+//voiceless sibilant :: 3
 s
 
-//liquids :: 4
-l r r
-
-//glides :: 5
-j w j
-
-//affricates :: 6
-ts pf dz ts pf
-
-//voiced sibilants :: 7
+//voiced sibilant :: 4
 z
 
-//stops + nasals :: 8
-mb nd ñg mp nt ñc mb mp nt nd
+//fricatives :: 5
+s s z f f f v v θ ð ʒ ʃ
+
+//liquids :: 6
+l ɹ ɹ ɹ l
+
+//glides :: 7
+j w w
+
+//glottals :: 8
+h
+
+//affricates :: 9
+dʒ tʃ
 #
 
 //VOWELS
-//short vowels :: 0
-a e i o u a e i o u å y
+//checked vowels :: 0
+æ ɑ ɛ ɪ ɔ ʊ ɜ˞ ʌ æ ɛ ɪ ɔ ʊ ʌ æ ɑ ɛ
 
-//long vowels :: 1
-á é í ó ú ǻ ý á é í ó ú
+//free vowels :: 1
+ɒ oʊ eɪ aɪ aʊ i u ɒ oʊ eɪ aɪ aʊ aɪ eɪ i u i
+
+//reduced vowels :: 2
+ə ə˞
 #
 
 //PARTS
 //Onsets :: 0
-0 1 2 3 4 5 314 30 14 24 34 15 25 35 1 2 3 4 5 0 0 1 2 6 7 3 7 14 24 30
+0 1 2 3 4 5 6 7 8 3,0 3,1 1,6 1,7 2,6 2,7 3,1,6 3,1,7 9 1 2 0 1 2 0 5 6 6 7
 
 //Nuclei :: 1
-0 0 0 1
+1 1 1 1 0 0 2 1 0 2
 
 //Codas :: 2
-0 1 2 3 4 6 7 40 41 42 31 47 43 03 07 8
+0 1 2 3 4 5 6 9 0,1,3 0,2,4 6,1 6,2 6,0 6,3 6,4 6,9 3,1 3,0 0 1 2 3 4 5 6 9
 #
 
 //STRUCTURES
 //syllable patterns
-ON N ON ON ONC N ON ONC ON NC
+ON ON ON ONC ON ONC ON ONC ON
 #

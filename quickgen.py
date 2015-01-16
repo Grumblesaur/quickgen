@@ -6,6 +6,32 @@ import os, sys, random
 if sys.version_info >= (3,0):
 	raw_input = input
 
+def parse(structure, part, phonemes):
+	#grab a random phoneme from the relevant category and return it
+	#structure can be O, N, or C, passed as 0, 1, or 2, respectively
+	
+	seg = "" #initialize the segment string as empty
+	pattern = part[structure] #focus in on relevant O, N, or C possibilities
+	listrange = len(pattern) #ensure that values fall within the bounds of list
+	index = int(random.random() * 1000) % listrange #pick an O, N, or C to construct
+	
+	onc = pattern[index] #obtain an onset, nucleus, or coda pattern
+	if "," in onc:
+		onc = onc.split(",") #if it is a cluster, split on commas
+					 #this creates a list of indices to be accessed
+
+	#loop to construct O, N, or C
+	for i in range(0, len(onc)):
+		pclass = int(onc[i]) #obtain an index for a class of phoneme
+		phone = int(random.random() * 1000) % len(phonemes[pclass])
+			#obtain an index for a specific phone
+		seg += phonemes[pclass][phone] #add phone to segment
+	
+	return seg #return the segment to the main script
+#end parse function definition
+	
+	
+'''
 def segment(n, shape, phonemes):
 	#grab a phoneme from the right category and return it
 	pattern = shape[n]
@@ -18,6 +44,7 @@ def segment(n, shape, phonemes):
 	
 	return seg
 #end segment function def
+'''
 
 #ask for name of input file (default = "input.txt")
 inn = raw_input("What is the name of your input file? (Leave blank for 'input.txt') ")
@@ -35,8 +62,8 @@ random.seed(None)
 #prepare lists
 consonants = []
 vowels = []
-types = []
-syllables = []
+parts = []
+structures = []
 
 #prepare the output file
 fout = open(out, 'w')
@@ -61,7 +88,7 @@ with open(inn) as fin:
 			break
 		elif list[0][0] != '/':
 			vowels.append(list)
-	#get types
+	#get parts
 	for line in fin:
 		if line.strip() == "":
 			continue
@@ -69,8 +96,8 @@ with open(inn) as fin:
 		if list[0][0] == '#':
 			break
 		elif list[0][0] != '/':
-			types.append(list)
-	#get syllables
+			parts.append(list)
+	#get structures
 	for line in fin:
 		if line.strip() == "":
 			continue
@@ -78,10 +105,10 @@ with open(inn) as fin:
 		if list[0][0] == '#':
 			break
 		elif list[0][0] != '/':
-			syllables.append(list)
+			structures.append(list)
 
 #un-nest the syllable patterns
-syllables = syllables[0]
+structures = structures[0]
 
 #ask for number of words (default = 100)
 i = raw_input("How many words would you like to build? (Leave blank for 100) ")
@@ -98,17 +125,17 @@ while i > 0:
 		#working syllable variable
 		syll = ""
 		#choose a random syllable pattern to follow
-		form = syllables[int(random.random() * 100) % len(syllables)]
+		form = structures[int(random.random() * 100) % len(structures)]
 		for k in range(0, len(form)):
 			if form[k] == "O":
 				#retrieve a string that is a valid onset
-				syll += segment(0, types, consonants)
+				syll += parse(0, parts, consonants)
 			elif form[k] == "C":
 				#retrieve a string that is a valid coda
-				syll += segment(2, types, consonants)
+				syll += parse(2, parts, consonants)
 			elif form[k] == "N":
 				#retrieve a string that is a valid nucleus
-				syll += segment(1, types, vowels)
+				syll += parse(1, parts, vowels)
 		#add new syllable to the word		
 		word += syll
 	#print out the word followed by a newline
