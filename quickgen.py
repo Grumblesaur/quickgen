@@ -54,6 +54,7 @@ fout = open(out, 'w')
 
 #extract from input file
 with open(inn) as fin:
+
 	#get consonants
 	for line in fin:
 		if line.strip() == "":
@@ -63,6 +64,7 @@ with open(inn) as fin:
 			break
 		elif list[0][0] != '/':
 			consonants.append(list)
+
 	#get vowels
 	for line in fin:
 		if line.strip() == "":
@@ -72,6 +74,7 @@ with open(inn) as fin:
 			break
 		elif list[0][0] != '/':
 			vowels.append(list)
+
 	#get parts
 	for line in fin:
 		if line.strip() == "":
@@ -81,6 +84,7 @@ with open(inn) as fin:
 			break
 		elif list[0][0] != '/':
 			parts.append(list)
+
 	#get structures
 	for line in fin:
 		if line.strip() == "":
@@ -99,39 +103,47 @@ i = raw_input("How many words would you like to build? (Leave blank for 100) ")
 if i == "":
 	i = 100
 else:
-	i = (int(float(i)))
+	i = int(i)
 
 while i > 0:
 	#working word variable
 	word = ""
+
 	#create word in this loop
 	for j in range(0, int(random.triangular(0,5,1.45)) + 1):
+
 		#working syllable variable
 		syll = ""
+
 		#choose a random syllable pattern to follow
 		form = structures[int(random.random() * 100) % len(structures)]
 		for k in range(0, len(form)):
+
 			if form[k] == "O":
 				#retrieve a string that is a valid onset
 				syll += parse(0, parts, consonants)
+
 			elif form[k] == "C":
 				#retrieve a string that is a valid coda
 				syll += parse(2, parts, consonants)
+
 			elif form[k] == "N":
 				#retrieve a string that is a valid nucleus
 				syll += parse(1, parts, vowels)
+
 		#add new syllable to the word		
 		word += syll
+
 	#print out the word followed by a newline
 	fout.write(word)
 	fout.write('\n')
+
 	#decrement loop iterator
 	i -= 1
-#end while
+
 #close files
 fin.close()
 fout.close()
 
 sys.stdout.write("Program finished. \n")
-
 #end program
