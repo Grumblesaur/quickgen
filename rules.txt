@@ -1,31 +1,33 @@
-ee,ei,ea,eo,eu|e
-aa,ai,ae,ao,au|a
-ii,ia,ie,io|i
-oo,oa,oe,oi,ou|o
-uu,ua,ue,uo|u
+ee ei ea eo eu e
+aa ai ae ao au a
+ii ia ie io i
+oo oa oe oi ou o
+uu ua ue uo u
 
-ll,ly,lj,lw,lr|l
-yy,yl,yj,yw,yr|y
-jj,jl,jy,jw,jr|j
-wr,wl,wy,wj,ww|w
-rw,rl,rr,rj,ry|r
+ll ly lj lw lr l
+yy yl yj yw yr y
+jj jl jy jw jr j
+wr wl wy wj ww w
+rw rl rr rj ry r
 
-tt|t
-pp|p
-cc|c
-dd|d
-bb|b
-gg|g
+tt t
+pp p
+cc c
+dd d
+bb b
+gg g
+mm m
+nn n
+ññ ñ
 
-np,ñp,nb,ñb|mb
-mt,ñt,md,ñd|nd
-nc,ng,mc,mg|ñg
+np ñp nb ñb mb
+mt ñt md ñd nd
+nc ng mc mg ñg
 
-ji|ju
-iji|iwi
-wu|wi
-uwu|uju
-ui|wi
-iu|ju
-
+ji ju
+iji iwi
+wu wi
+uwu uwu uju
+ui wi
+iu ju
 #
