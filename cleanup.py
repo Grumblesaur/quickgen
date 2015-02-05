@@ -24,54 +24,22 @@ if clean == "":
 #prepare list of rewrite rules
 rewrites = []
 
-#prepare output file
-fout = open(clean, 'w')
+#prepare list of words to be rewritten
+rawtext = []
 
-#extract from rule file
-with open(rules) as fin:
-	#get rules line-by-line
-	for line in fin:
-		#skip blank lines
-		if line.strip() == "":
-			continue
-		#split rewrite conditions from rules
-		list = line.split()
-		
-		#if a line has an isolated # sign in it, stop extraction
-		if list[0][0] == "#":
-			break
+#pull in all the words from quickgen.py's output file
+fin = open(words)
+for line in fin:
+	rawtext.append(line)
+fin.close() #close the file
 
-		#and if there's no slash, append it to the list
-		elif list[0][0] != '/':
-			rewrites.append(list)
-fin.close()
+#open new input file as rules file, read in rules
+fin = open(rules):
+for line in fin:
+	rewrites.append(line.split())
+fin.close() #close rules file
+
+print rawtext
+print rewrites
 
 
-#pull one string from the file at a time
-with open(words) as fin:
-	#start loop to rewrite each word in file
-	for line in fin:
-		#prepare word variable
-		word = line
-		cleanword = ""
-		#step through all rewrite rules
-		for i in range (0, len(rewrites)):
-			for j in range (0, len(rewrites[i]) - 1):
-				#variable to hold current substring
-				substring = rewrites[i][j]
-				#variable to index to replacement substring
-				replace = len(rewrites[i]) - 1
-				#check if substring is in the word
-				if substring in word:
-					#replace it
-					cleanword = string.replace(word, substring, rewrites[i][replace])
-		#write word to file
-		fout.write(cleanword)
-
-#close files
-fin.close()
-fout.close()
-
-sys.stdout.write("Program finished. \n")
-
-#end program
