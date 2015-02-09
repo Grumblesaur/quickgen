@@ -34,12 +34,32 @@ for line in fin:
 fin.close() #close the file
 
 #open new input file as rules file, read in rules
-fin = open(rules):
+fin = open(rules)
 for line in fin:
 	rewrites.append(line.split())
 fin.close() #close rules file
 
-print rawtext
-print rewrites
+#for every word passed in
+for i in range(0, len(rawtext)):
+	
+	#check each category of rewrites
+	for j in range(0, len(rewrites)):		
+		
+		#and check the current word for each rewrite in a category
+		for k in range(0, len(rewrites[j]) - 2):
+			
+			#if the rewrite substring exists in the string
+			if rewrites[j][k] in rawtext[i]:
+				
+				#replace it
+				rawtext[i].replace(rewrites[j][k], rewrites[j][len(rewrites[j]) - 1])
+#end loop
 
+fout = open(clean, 'w')
+for l in range(0, len(rawtext)):
+	fout.write(rawtext[l])
+
+sys.stdout.write("Program complete.\n")
+
+#end program
 
