@@ -52,7 +52,7 @@ for i in range(0, len(rawtext)):
 			if rewrites[j][k] in rawtext[i]:
 				
 				#replace it
-				rawtext[i].replace(rewrites[j][k], rewrites[j][len(rewrites[j]) - 1])
+				rawtext[i] = rawtext[i].replace(rewrites[j][k], rewrites[j][len(rewrites[j]) - 1])
 #end loop
 
 fout = open(clean, 'w')
