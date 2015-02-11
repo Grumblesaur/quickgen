@@ -40,8 +40,15 @@ out = raw_input("What is the name of your output file? (Leave blank for 'output.
 if out == "":
 	out = "output.txt"
 
+seed = raw_input("Insert seed for RNG (leave blank for system time) ")
+
+if seed == "":
+	seed = None
+else:
+	seed = int(seed)
+
 #use system time for seed
-random.seed(None)
+random.seed(seed)
 
 #prepare lists
 consonants = []
@@ -99,9 +106,9 @@ with open(inn) as fin:
 structures = structures[0]
 
 #ask for number of words (default = 100)
-i = raw_input("How many words would you like to build? (Leave blank for 100) ")
+i = raw_input("How many words would you like to build? (Leave blank for 50) ")
 if i == "":
-	i = 100
+	i = 50
 else:
 	i = int(i)
 
