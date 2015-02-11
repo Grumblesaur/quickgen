@@ -1,15 +1,18 @@
+//Vowels
 ee ei ea eo eu e
 aa ai ae ao au a
 ii ia ie io i
 oo oa oe oi ou o
 uu ua ue uo u
 
+//Liquids
 ll ly lj lw lr l
 yy yl yj yw yr y
 jj jl jy jw jr j
 wr wl wy wj ww w
 rw rl rr rj ry r
 
+//Stops
 tt t
 pp p
 cc c
@@ -20,10 +23,12 @@ mm m
 nn n
 ññ ñ
 
+//Mixed prenasalized stops
 np ñp nb ñb mb
 mt ñt md ñd nd
 nc ng mc mg ñg
 
+//More vowels
 ji ju
 iji iwi
 wu wi

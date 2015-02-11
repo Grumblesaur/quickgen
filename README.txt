@@ -1,3 +1,17 @@
+#000 :: TABLE OF CONTENTS
+=========================
+#000 = Table of Contents
+#100 = Licensing Information
+#200 = General Instructions and Information
+#300 = Instructions for quickgen.py
+	#310 = Category Example
+	#320 = General Rules and Guidelines for Editing
+	#330 = Tips for Dealing with Language Oddities
+#400 = Instructions for cleanup.py
+	
+#100 :: LICENSING INFORMATION
+=============================
+
 quickgen.py is a lightweight Python-based random word generator in progress.
 
     Copyright (C) 2014  James Murphy
@@ -18,14 +32,21 @@ quickgen.py is a lightweight Python-based random word generator in progress.
     
     (See LICENCSE.md for additional details.)
 
-INSTRUCTIONS FOR USE
-====================
 
-This program is compatible with Python 2 and Python 3.
+#200 :: GENERAL INSTRUCTIONS AND INFORMATION
+============================================
 
-You should create an input file with your phonemes and rules.
-Use "//" or "/" to comment out a line in the input file.
-This will prevent the program from extracting that line.
+This package is compatible with Python 2 and Python 3.
+Lines beginning with a / character in user-edited rule
+configuration files are ignored by both the quickgen.py
+script and the cleanup.py script. Lines starting with
+the # character delimit blocks. Details for
+file-specific use of # are listed below.
+
+
+#300 :: INSTRUCTIONS FOR quickgen.py
+====================================
+
 The # sign on its own line delimits a block of phoneme
 or structure definitions and should be between each section
 or else the program will fail. Blank lines are ignored by
@@ -35,6 +56,10 @@ as you please.
 When prompted for input at runtime, the default values (the
 values passed when you press Enter/Return without typing
 anything) are "input.txt", "output.txt", and "100".
+
+
+#310 :: CATEGORY EXAMPLE
+========================
 
 I recommend naming your phoneme categories with comments as
 in this example:
@@ -77,8 +102,9 @@ o u
 N ON NC ONC
 #
 
-GENERAL RULES AND GUIDELINES FOR EDITING
-========================================
+
+#320 :: GENERAL RULES AND GUIDELINES FOR EDITING
+================================================
 You define consonants, vowels, syllable parts, and syllable
 structures. In each category (commented with ALL CAPS text
 in the example above), a line represents a phonemic group.
@@ -136,8 +162,9 @@ ONC ON N NC ON ON ON
 This means that Onset-Nucleus syllables are more likely
 to occur than other types.
 
-TIPS FOR DEALING WITH LANGUAGE ODDITIES
-=======================================
+
+#330 :: TIPS FOR DEALING WITH LANGUAGE ODDITIES
+===============================================
 
 If your language, by chance, doesn't allow for syllables
 with codas, put at least one number in the //codas :: 2
@@ -145,6 +172,15 @@ category, but remove any of the syllable structures with
 "C" in them from the syllable structures list.
 
 Likewise with "O" if you have a similar case with onsets.
+
+So even for unused codas, do:
+
+//codas :: 2
+0
+
+This ensures that the program won't break in the case of
+an empty list. (I don't know if it actually would break,
+but it's better not to take any chances.)
 
 If your language has syllabic nasals or sonorants, create
 a group for them in vowels. You can still have a group
@@ -155,3 +191,45 @@ This program accepts UTF-8 unicode characters. If you put
 any characters in categories not separated by whitespace,
 for example, the string "ss", then that string will be
 treated as a separate phoneme.
+
+
+#400 :: INSTRUCTIONS FOR cleanup.py
+===================================
+
+This script takes two inputs: a rules file, whose
+specification is described below; a raw words file,
+which takes quickgen.py's "output.txt" by default; and
+has one output, called "clean.txt" by default. This is
+where the rewritten words go before the program finishes.
+
+As quickgen.py is a relatively "dumb" wordgen, having rewrite
+rules to tidy the output will probably be useful.
+
+Here is an example of a rules file:
+
+ee ae oe ie ue é
+mn mñ mm m
+
+//simplify stop clusters
+pt pp pk p
+kt kk kp k
+
+ll j
+
+oi oe
+
+//dental aspirates to fricatives
+th þ
+dh ð
+#
+
+Empty lines and lines beginning with / are ignored.
+In a line of rules, all elements but the last of the
+row are substrings that the script searches for. If
+it finds that substring in a word from your word file
+(which is one of the files that cleanup.py takes as
+input), that substring is replaced with the element at
+the end of the relevant row of rewrite rules.
+
+So using this example ruleset, the string "theepp"
+would become "þép".

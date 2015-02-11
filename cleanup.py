@@ -36,7 +36,12 @@ fin.close() #close the file
 #open new input file as rules file, read in rules
 fin = open(rules)
 for line in fin:
-	rewrites.append(line.split())
+	if line[0] == "/":
+		continue
+	else if line[0] == "#":
+		break
+	else:
+		rewrites.append(line.split())
 fin.close() #close rules file
 
 #for every word passed in
