@@ -38,7 +38,7 @@ fin = open(rules)
 for line in fin:
 	if line[0] == "/":
 		continue
-	else if line[0] == "#":
+	elif line[0] == "#":
 		break
 	else:
 		rewrites.append(line.split())

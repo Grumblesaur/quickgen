@@ -1,5 +1,6 @@
 #000 :: TABLE OF CONTENTS
 =========================
+
 #000 = Table of Contents
 #100 = Licensing Information
 #200 = General Instructions and Information
@@ -8,6 +9,7 @@
 	#320 = General Rules and Guidelines for Editing
 	#330 = Tips for Dealing with Language Oddities
 #400 = Instructions for cleanup.py
+
 	
 #100 :: LICENSING INFORMATION
 =============================
@@ -105,6 +107,7 @@ N ON NC ONC
 
 #320 :: GENERAL RULES AND GUIDELINES FOR EDITING
 ================================================
+
 You define consonants, vowels, syllable parts, and syllable
 structures. In each category (commented with ALL CAPS text
 in the example above), a line represents a phonemic group.

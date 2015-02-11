@@ -5,6 +5,12 @@ ii ia ie io i
 oo oa oe oi ou o
 uu ua ue uo u
 
+áa aá eá áe ái iá oá áo uá áu á
+ée eé éa aé éi ié oé éo ué éu é
+óo oó óa aó ói ió eó óe uó óu ó
+ií íi ía aí ío oí eí íe uí íu í
+úu uú úa aú úo oú eú úe úi iú ú
+
 //Liquids
 ll ly lj lw lr l
 yy yl yj yw yr y
