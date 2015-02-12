@@ -112,12 +112,24 @@ if i == "":
 else:
 	i = int(i)
 
+low = raw_input("Enter minimum number of syllables per word (Defaults to 1) ")
+if low == "":
+	low = 1
+else:
+	low = int(low)
+
+high = raw_input("Enter maximum number of syllables per word (Defaults to 5) ")
+if high == "":
+	high = 5
+else:
+	high = int(high)
+
 while i > 0:
 	#working word variable
 	word = ""
 
 	#create word in this loop
-	for j in range(0, int(random.triangular(0,5,1.45)) + 1):
+	for j in range(0, int(random.triangular(low, high, low + 1))):
 
 		#working syllable variable
 		syll = ""

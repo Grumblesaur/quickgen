@@ -15,12 +15,12 @@ a e i o u
 á é í ó ú
 #
 //Onsets :: 0
-0 1 2 3 0,3 4 1,3 4,3 0 1 2 3 0 1 2 3 0,3 1,3
+0 1 2 3 0,3 4 1,3 4,3 0 1 2 3 0 1 2 3 0,3 1,3 0 1 0 0,3
 //Nuclei :: 1
-0 0 0 0 0 1 1
+0 0 0 0 0 1
 //Codas :: 2
-0 2 2 2 3 3
+2 2 2 0 2 1 0 1 3 3
 #
 //syllable patterns
-ON ON N ONC ONC ON ON N N ON
+ON ON N ONC
 #
