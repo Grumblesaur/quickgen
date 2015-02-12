@@ -14,7 +14,7 @@
 #100 :: LICENSING INFORMATION
 =============================
 
-quickgen.py is a lightweight Python-based random word generator in progress.
+quickgen is a lightweight Python-based random word generator package.
 
     Copyright (C) 2014  James Murphy
 
@@ -33,7 +33,17 @@ quickgen.py is a lightweight Python-based random word generator in progress.
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
     (See LICENCSE.md for additional details.)
+	
+    If you need more information about quickgen, you can contact me at
+    jmurphy4@mail.umw.edu OR leave comments in my GitHub repo and I
+    can assist you with any questions or suggestions you may have. If
+    you like, you can clone, fork, or otherwise manipulate this script
+    to suit it to your own needs.
 
+    Additionally, I would love to see generated wordlists, and the
+    phonological information and rewrite rules you used to arrive at
+    them. If you get any good output, send it to me with your input
+    files.
 
 #200 :: GENERAL INSTRUCTIONS AND INFORMATION
 ============================================
