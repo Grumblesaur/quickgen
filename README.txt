@@ -4,6 +4,8 @@
 #000 = Table of Contents
 #100 = Licensing Information
 #200 = General Instructions and Information
+	#210 = User Input at Runtime
+	#220 = Known Imperfections
 #300 = Instructions for quickgen.py
 	#310 = Category Example
 	#320 = General Rules and Guidelines for Editing
@@ -55,6 +57,9 @@ script and the cleanup.py script. Lines starting with
 the # character delimit blocks. Details for
 file-specific use of # are listed below.
 
+#210 :: USER INPUT AT RUNTIME
+=============================
+
 One of the arguments which quickgen.py will ask you to
 pass it is a seed for the random number generator. Any
 integer is an acceptable input for this. Leaving that
@@ -66,6 +71,20 @@ you to go back to a word list you used previously, in
 case you didn't get to save it before, or if you're
 trying to keep your working directory uncluttered by
 extraneous text files.
+
+quickgen.py will also ask you for input for the random number
+generator. In addition to the seed, the RNG will also ask for
+a minimum value, which determines the smallest number of
+syllables you want in a word; and a maximum value, which
+determines the greatest number of syllables you want in a word.
+
+Words of length minimum + 1 will always be the most common, due
+to the nature of the arguments passed to Python's triangular
+distribution by this script.
+
+
+#220 :: KNOWN IMPERFECTIONS
+===========================
 
 While quickgen.py will take any positive number as the
 target amount of words to generate, cleanup.py is not
@@ -92,7 +111,6 @@ as you please.
 When prompted for input at runtime, the default values (the
 values passed when you press Enter/Return without typing
 anything) are "input.txt", "output.txt", and "100".
-
 
 #310 :: CATEGORY EXAMPLE
 ========================
