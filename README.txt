@@ -252,11 +252,19 @@ dh ð
 
 Empty lines and lines beginning with / are ignored.
 In a line of rules, all elements but the last of the
-row are substrings that the script searches for. If
-it finds that substring in a word from your word file
-(which is one of the files that cleanup.py takes as
-input), that substring is replaced with the element at
-the end of the relevant row of rewrite rules.
+row are substrings that the script searches for.
+If it finds that substring in a word from your word
+file (which is one of the files that cleanup.py takes
+as input), that substring is replaced with the
+element at the end of the relevant row of rewrite rules.
+
+The # character marks the "end" of the file. You can
+type anything after a # character and the cleanup.py
+script will ignore it. This may be useful if you want to
+leave out a part of your ruleset for a particular batch
+of words, or if you want to leave yourself a note for
+future use without having to make excessive use of /
+or // to denote a comment.
 
 So using this example ruleset, the string "theepp"
 would become "þép".
