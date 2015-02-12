@@ -45,6 +45,30 @@ script and the cleanup.py script. Lines starting with
 the # character delimit blocks. Details for
 file-specific use of # are listed below.
 
+One of the arguments which quickgen.py will ask you to
+pass it is a seed for the random number generator. Any
+integer is an acceptable input for this. Leaving that
+input blank will merely use the system time to seed
+the random number generator.
+
+Entering the same seed at different times will allow
+you to go back to a word list you used previously, in
+case you didn't get to save it before, or if you're
+trying to keep your working directory uncluttered by
+extraneous text files.
+
+While quickgen.py will take any positive number as the
+target amount of words to generate, cleanup.py is not
+always so successful at cleaning large amounts of words.
+50 is the recommended amount since it seems to fairly
+consistently manage to clean at least the first 50 words
+in a given batch.
+
+This problem is one I am currently working on fixing, but
+as long as you don't generate and attempt to clean more
+than 50-60 words at a time, you probably won't have as much
+garbage output in your clean.txt file.
+
 
 #300 :: INSTRUCTIONS FOR quickgen.py
 ====================================
