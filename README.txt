@@ -3,6 +3,7 @@
 
 #000 = Table of Contents
 #100 = Licensing Information
+	#110 = Contact Information
 #200 = General Instructions and Information
 	#210 = User Input at Runtime
 	#220 = Known Imperfections
@@ -35,6 +36,9 @@ quickgen is a lightweight Python-based random word generator package.
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
     (See LICENCSE.md for additional details.)
+
+#110 :: CONTACT INFORMATION
+===========================
 	
     If you need more information about quickgen, you can contact me at
     jmurphy4@mail.umw.edu OR leave comments in my GitHub repo and I
@@ -47,6 +51,7 @@ quickgen is a lightweight Python-based random word generator package.
     them. If you get any good output, send it to me with your input
     files.
 
+
 #200 :: GENERAL INSTRUCTIONS AND INFORMATION
 ============================================
 
@@ -56,6 +61,7 @@ configuration files are ignored by both the quickgen.py
 script and the cleanup.py script. Lines starting with
 the # character delimit blocks. Details for
 file-specific use of # are listed below.
+
 
 #210 :: USER INPUT AT RUNTIME
 =============================
