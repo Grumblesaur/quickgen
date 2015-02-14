@@ -10,11 +10,17 @@ def parse(structure, part, phonemes):
 	#grab a random phoneme from the relevant category and return it
 	#structure can be O, N, or C, passed as 0, 1, or 2, respectively
 	
-	seg = "" #initialize the segment string as empty
-	pattern = part[structure] #focus in on relevant O, N, or C possibilities
-	listrange = len(pattern) #ensure that values fall within the bounds of list
-	index = int(random.random() * 1000) % listrange #pick an O, N, or C to construct
+	#initialize the segment string as empty
+	seg = ""
 	
+	#focus in on relevant O, N, or C possibilities
+	pattern = part[structure]
+
+	#ensure that values fall within the bounds of list
+	listrange = len(pattern) 
+
+	#pick an O, N, or C to construct
+	index = random.randrange(0, listrange)	
 	onc = pattern[index] #obtain an onset, nucleus, or coda pattern
 	if "," in onc:
 		onc = onc.split(",") #if it is a cluster, split on commas
@@ -135,7 +141,7 @@ while i > 0:
 		syll = ""
 
 		#choose a random syllable pattern to follow
-		form = structures[int(random.random() * 100) % len(structures)]
+		form = structures[random.randrange(0, len(structures))]
 		for k in range(0, len(form)):
 
 			if form[k] == "O":
