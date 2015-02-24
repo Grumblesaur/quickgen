@@ -29,7 +29,7 @@ def parse(structure, part, phonemes):
 	#loop to construct O, N, or C
 	for i in range(0, len(onc)):
 		pclass = int(onc[i]) #obtain an index for a class of phoneme
-		phone = int(random.random() * 1000) % len(phonemes[pclass])
+		phone = random.randrange(0, len(phonemes[pclass]))
 			#obtain an index for a specific phone
 		seg += phonemes[pclass][phone] #add phone to segment
 	
@@ -135,7 +135,7 @@ while i > 0:
 	word = ""
 
 	#create word in this loop
-	for j in range(0, int(random.triangular(low, high, low + 1))):
+	for j in range(0, int(random.triangular(low, high + 1, low + 1))):
 
 		#working syllable variable
 		syll = ""
