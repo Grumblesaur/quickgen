@@ -38,6 +38,8 @@ fin = open(rules)
 for line in fin:
 	if line[0] == "/":
 		continue
+	elif line.strip() == "":
+		continue
 	elif line[0] == "#":
 		break
 	else:
