@@ -35,7 +35,7 @@ quickgen is a lightweight Python-based random word generator package.
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
     
-    (See LICENCSE.md for additional details.)
+    (See LICENSE.md for additional details.)
 
 #110 :: CONTACT INFORMATION
 ===========================
